@@ -1,0 +1,332 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1f1f1f;
+    color: #333;
+    overflow-x: hidden;
+    width: 100vw;
+    margin-top: 100vh; /* Add a margin to the body to account for the fixed landing section */
+}
+.bcwhite{
+    background-color: #292929e9;
+    box-shadow: 0px -8px 12px rgba(0, 0, 0, 0.644);
+}
+
+/* Header */
+header {
+    background-color: #141414;
+    color: white;
+    padding: 10px 40px; /* Reduced padding for a more compact look */
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 5px 5px 10px rgb(0, 0, 0), -5px -5px 10px rgba(0, 0, 0);
+
+    text-align: center;
+}
+
+/* Landing Section */
+.landing {
+    background-image: 
+    linear-gradient(
+            rgba(0, 0, 0, 0.1),   /* This is the translucent black gradient */
+            rgba(0, 0, 0)     /* You can adjust the opacity (0.5 here) */
+        ),url('main.png');  /* Replace with your image path */
+    background-size: cover;  /* Ensures the image covers the entire background */
+    background-position: center center;  /* Centers the image to avoid unwanted cropping */
+    background-repeat: no-repeat;  /* Prevents the image from repeating */
+    color: white;
+    height: 100vh;
+    position: fixed;  /* Fixes the landing page in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: -1; /* Ensure other sections come over this section */
+}
+
+.landing h1 {
+    font-size: 4.1vw;
+    margin-bottom: 20px;
+    animation: fadeIn 1s  ease-in 1;
+    text-shadow: 5px 5px 10px rgb(0, 0, 0,0.4), -5px -5px 10px rgb(0, 0, 0,0.4);
+}
+
+.landing p {
+    font-size: 1.7vw;
+    margin-bottom: 30px;
+    animation: fadeIn 1s  ease-in 1;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0,0.4), -3px -3px 5px rgb(0, 0, 0,0.4);
+}
+
+@media (max-width: 750px){
+    .landing h1 {
+        font-size: 8vw;
+        margin-bottom: 20px;
+    }
+    .landing p {
+        font-size: 5vw;
+        margin-bottom: 30px;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn2 {
+    from {
+        background-image: 
+        linear-gradient(
+                rgba(0, 0, 0, 0),   /* This is the translucent black gradient */
+                rgba(0, 0, 0, 0)     /* You can adjust the opacity (0.5 here) */
+            ),url('main.png'); 
+    }
+    to {
+        background-image: 
+        linear-gradient(
+                rgba(0, 0, 0, 0.1),   /* This is the translucent black gradient */
+                rgba(0, 0, 0)     /* You can adjust the opacity (0.5 here) */
+            ),url('main.png'); 
+    }
+}
+/* Section Styles */
+section {
+    padding: 60px 20px;
+    position: relative; /* Ensures sections are positioned relative to each other */
+    z-index: 10; /* This makes sure the content sections are above the fixed landing section */
+}
+
+.container {
+    padding: 20px;
+    background: linear-gradient(to right, #101010, #212121);
+
+    border: 1px solid rgb(132, 104, 79);
+    border-radius: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #c06600;
+}
+
+/* Why Section */
+.why p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #9b9b9b;
+}
+
+/* Approach Section */
+.approach p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #9b9b9b;
+}
+@media (max-width: 750px){
+    .container{
+        padding: 15px;
+
+    }
+    .why p , .approach p{
+        font-size: 1rem;
+        line-height: 1.35;
+    }
+    h2{
+        font-size: 1.7rem;
+    }
+}
+/* Gallery Section */
+.gallery .gallery-images {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery .gallery-images img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Section */
+
+.con2{
+    padding-bottom: 60px;
+}
+.team-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.team-card {
+    background: #f8f8f8;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-card img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background-color: #141414;
+    color: rgb(189, 189, 189);
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0px -8px 12px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* CSS */
+.responsive-card {
+    display: flex;
+    flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    border: 2PX SOLID #965a1694;
+    padding: 20PX;
+}
+
+.card-image {
+    flex: 1;
+    max-width: 500px; /* Fixed width for the image section */
+    height: 400px; /* Fixed height for the image section */
+    overflow: hidden;
+    border-radius: 20PX;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the section without squeezing */
+}
+
+.card-text {
+    flex: 2;
+    padding: 20px;
+    color: #9a9a9a;
+}
+
+.card-text h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.card-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 750px) {
+    .responsive-card {
+        flex-direction: column; /* Stacks the content vertically */
+    }
+
+    .card-image {
+        max-width: 100%; /* Full width for smaller screens */
+        height: 200px; /* Keeps the fixed height */
+    }
+
+    .card-text {
+        padding: 15px;
+    }
+}
+
+.marginmaker{
+    width: 100%;
+    height: 4vw;
+}
+
+/* CSS */
+.custom-video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px; /* Fixed width */
+    height: 600px; /* Fixed height */
+ 
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 20px auto; /* Centers the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.video-label {
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.video-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.video-wrapper video , .video-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the container without squeezing */
+    border-radius: 20px;
+}
